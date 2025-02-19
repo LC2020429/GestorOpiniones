@@ -80,12 +80,21 @@ export const deleteUser = async (req, res) => {
 export const updatePassword = async (req, res) => {
     try {
         const { uid } = req.params;
+        const { newPasswordVerify } = req.body;
         const { newPassword } = req.body;
 
         const user = await User.findById(uid);
 
-        const matchOldAndNewPassword = await verify(user.password, newPassword);
+        const verifyPassword = await verify(user.password, newPasswordVerify);
         // parte para que ingrese la antigua contraseña
+        if (!verifyPassword) {
+            return res.status(400).json({
+                success: false,
+                message: "Ingrese su contraseña antigua",
+            });
+        }
+        
+        const matchOldAndNewPassword = await verify(user.password, newPassword);
         if (matchOldAndNewPassword) {
             return res.status(400).json({
                 success: false,

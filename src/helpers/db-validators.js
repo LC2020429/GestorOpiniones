@@ -1,6 +1,6 @@
 import User from "../user/user.model.js"
 import Category from "../category/categorys.model.js"
-//import Pet from "../pet/pet.model.js"
+import Publicacion from "../publicacion/publicacion.model.js"
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
@@ -30,12 +30,12 @@ export const categoryExists = async (cid = "") => {
         throw new Error("No existe la categoría con el ID proporcionado")
     }
 }
-/*
-export const petExists = async (id = "") => {
-    const existe = await Pet.findById(id);
+
+export const publicacionExists = async (id = "") => {
+    const existe = await Publicacion.findById(pid);
     if (!existe) {
-        throw new Error("No existe la mascota con el ID proporcionado");
+        throw new Error("No existe la publicacion con el ID proporcionado");
     }
 };
-*/
+
 

@@ -1,11 +1,12 @@
 "use strict";
 import express from "express";
 import cors from "cors";
-import {hash} from "argon2";
+import { hash } from "argon2";
 import helmet from "helmet";
 import morgan from "morgan";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
+import categoryRoutes from "../src/category/categorys.routes.js";
 import User from "../src/user/user.model.js";
 import { dbConnection } from "./mongo.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
@@ -30,7 +31,8 @@ const crearAdministrador = async () => {
         username: "AdminOpinionGestor",
         email: "AdminOpinionGestor@gmail.com",
         password: encryptedPassword,
-        phone: 11110000
+        phone: 11110000,
+        role: "ADMIN",
       });
       await admin.save();
     }
@@ -42,6 +44,7 @@ const crearAdministrador = async () => {
 const routes = (app) => {
   app.use("/gestorOpinions/v1/auth", authRoutes);
   app.use("/gestorOpinions/v1/user", userRoutes);
+  app.use("/gestorOpinions/v1/categoria", categoryRoutes);
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 const conectarDB = async () => {
@@ -63,7 +66,7 @@ export const initServer = () => {
     const port = process.env.PORT || 3002;
     app.listen(port, () => {
       console.log(`Server running on port ${port} `);
-    });    
+    });
   } catch (err) {
     console.log(`Server init failed: ${err}`);
   }

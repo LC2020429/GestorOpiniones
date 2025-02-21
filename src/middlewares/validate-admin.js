@@ -10,7 +10,7 @@ export const hasRoles = (...roles) => {
       if (!roles.includes(req.usuario.role)) {  
         return res.status(401).json({
           success: false,
-          message: `El servicio requiere uno de estos roles ${roles}`
+          message: `Para esto debes de ser  ${roles}`
         });
       }
   

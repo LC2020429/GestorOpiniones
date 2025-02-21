@@ -9,6 +9,7 @@ import userRoutes from "../src/user/user.routes.js";
 import categoryRoutes from "../src/category/categorys.routes.js";
 import publicacionRoutes from "../src/publicacion/publicacion.routes.js";
 import User from "../src/user/user.model.js";
+import Category from "../src/category/categorys.model.js";
 import { dbConnection } from "./mongo.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
@@ -42,6 +43,23 @@ const crearAdministrador = async () => {
   }
 };
 
+const crearCategoria = async () => {
+  try {
+    const categoriaExist = await Category.findOne({ categoryName: "Default" });
+
+    if (!categoriaExist) {
+      const defaultCategory = new Category({
+        categoryName: "Default",
+        vistasCategory: 0,
+        status: true,
+      });
+      await defaultCategory.save();
+    }
+  } catch (err) {
+    console.log(`Error al crear la categoría por defecto: ${err}`);
+  }
+};
+
 const routes = (app) => {
   app.use("/gestorOpinions/v1/auth", authRoutes);
   app.use("/gestorOpinions/v1/user", userRoutes);
@@ -65,6 +83,7 @@ export const initServer = () => {
     conectarDB();
     routes(app);
     crearAdministrador();
+    crearCategoria();
     const port = process.env.PORT || 3002;
     app.listen(port, () => {
       console.log(`Server running on port ${port} `);

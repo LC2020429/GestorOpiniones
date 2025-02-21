@@ -13,6 +13,7 @@ import Category from "../src/category/categorys.model.js";
 import { dbConnection } from "./mongo.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
+import comentRoutes from "../src/coments/coments.routes.js";
 
 const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -65,6 +66,7 @@ const routes = (app) => {
   app.use("/gestorOpinions/v1/user", userRoutes);
   app.use("/gestorOpinions/v1/categoria", categoryRoutes);
   app.use("/gestorOpinions/v1/publicacion", publicacionRoutes);
+  app.use("/gestorOpinions/v1/comentarios", comentRoutes);
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 const conectarDB = async () => {

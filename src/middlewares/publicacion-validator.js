@@ -29,7 +29,6 @@ export const createPublicacionValidator = [
 
 export const getByIdPublicacionValidator = [
   validateJWT,
-  isOwner,
   hasRoles("USER"),
   param("pid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("pid").custom(publicacionExists),
@@ -40,7 +39,6 @@ export const getByIdPublicacionValidator = [
 export const updatePublicacionValidator = [
   validateJWT,
   hasRoles("USER"),
-  isOwner,
   param("pid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("pid").custom(publicacionExists),
   body("title")
@@ -61,7 +59,6 @@ export const updatePublicacionValidator = [
 
 export const deletePublicacionValidator = [
   validateJWT,
-  isOwner,
   hasRoles("USER"),
   hasRoles("USER"),
   param("pid").isMongoId().withMessage("No es un ID válido de MongoDB"),

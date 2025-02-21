@@ -179,7 +179,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/user/findUser/67b645a55de8e767c7dd2034",
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/user/findUser/67b787bca5efc2b7aa07baef",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -193,7 +193,7 @@
 								"v1",
 								"user",
 								"findUser",
-								"67b645a55de8e767c7dd2034"
+								"67b787bca5efc2b7aa07baef"
 							]
 						}
 					},
@@ -214,7 +214,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/user/updatePassword/67b645a55de8e767c7dd2034",
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/user/updatePassword/67b787bca5efc2b7aa07baef",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -228,7 +228,7 @@
 								"v1",
 								"user",
 								"updatePassword",
-								"67b645a55de8e767c7dd2034"
+								"67b787bca5efc2b7aa07baef"
 							]
 						}
 					},
@@ -241,7 +241,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"ale2024@gmail.com\",\r\n    \"password\": \"123Abcd!\"\r\n}",
+							"raw": "{\r\n    \"email\": \"AdminOpinionGestor@gmail.com\",\r\n    \"password\": \"Key40RAdm!nSuper\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -272,7 +272,72 @@
 		},
 		{
 			"name": "Posts",
-			"item": []
+			"item": [
+				{
+					"name": "addPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Herrera",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "JH2025",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jh25@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123Abcd!",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/Compu/Downloads/IMG_20230902_083600.jpg"
+								},
+								{
+									"key": "profileDescription",
+									"value": "cuenta sobre matematicas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/publicacion",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"publicacion"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Comments",
@@ -280,7 +345,234 @@
 		},
 		{
 			"name": "Categorys",
-			"item": []
+			"item": [
+				{
+					"name": "AddCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/addCategory",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCategory2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"categoryName\": \"Estudio\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/addCategory",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listCategorys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findCategory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"categoryName\": \"Estudio\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/updateCategory/67b79240e582f6cfad76f53c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								"updateCategory",
+								"67b79240e582f6cfad76f53c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"categoryName\": \"Estudio\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/updateCategory/67b79240e582f6cfad76f53c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								"updateCategory",
+								"67b79240e582f6cfad76f53c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

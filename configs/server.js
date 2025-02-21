@@ -7,6 +7,7 @@ import morgan from "morgan";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/user/user.routes.js";
 import categoryRoutes from "../src/category/categorys.routes.js";
+import publicacionRoutes from "../src/publicacion/publicacion.routes.js";
 import User from "../src/user/user.model.js";
 import { dbConnection } from "./mongo.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
@@ -45,6 +46,7 @@ const routes = (app) => {
   app.use("/gestorOpinions/v1/auth", authRoutes);
   app.use("/gestorOpinions/v1/user", userRoutes);
   app.use("/gestorOpinions/v1/categoria", categoryRoutes);
+  app.use("/gestorOpinions/v1/publicacion", publicacionRoutes);
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 const conectarDB = async () => {

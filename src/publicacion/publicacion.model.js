@@ -14,7 +14,7 @@ const publicacionSchema = new Schema(
     },
     userPubli: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: "USER",
       required: true,
     },
     categories: [
@@ -24,6 +24,10 @@ const publicacionSchema = new Schema(
         required: true,
       },
     ],
+    status: {
+      type: Boolean,
+      default: true,
+    },
   },
   {
     versionKey: false,

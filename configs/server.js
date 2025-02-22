@@ -9,9 +9,11 @@ import userRoutes from "../src/user/user.routes.js";
 import categoryRoutes from "../src/category/categorys.routes.js";
 import publicacionRoutes from "../src/publicacion/publicacion.routes.js";
 import User from "../src/user/user.model.js";
+import Category from "../src/category/categorys.model.js";
 import { dbConnection } from "./mongo.js";
 import apiLimiter from "../src/middlewares/rate-limit-validator.js";
 import { swaggerDocs, swaggerUi } from "./swagger.js";
+import comentRoutes from "../src/coments/coments.routes.js";
 
 const middlewares = (app) => {
   app.use(express.urlencoded({ extended: false }));
@@ -42,11 +44,29 @@ const crearAdministrador = async () => {
   }
 };
 
+const crearCategoria = async () => {
+  try {
+    const categoriaExist = await Category.findOne({ categoryName: "Default" });
+
+    if (!categoriaExist) {
+      const defaultCategory = new Category({
+        categoryName: "Default",
+        vistasCategory: 0,
+        status: true,
+      });
+      await defaultCategory.save();
+    }
+  } catch (err) {
+    console.log(`Error al crear la categoría por defecto: ${err}`);
+  }
+};
+
 const routes = (app) => {
   app.use("/gestorOpinions/v1/auth", authRoutes);
   app.use("/gestorOpinions/v1/user", userRoutes);
   app.use("/gestorOpinions/v1/categoria", categoryRoutes);
   app.use("/gestorOpinions/v1/publicacion", publicacionRoutes);
+  app.use("/gestorOpinions/v1/comentarios", comentRoutes);
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 };
 const conectarDB = async () => {
@@ -65,6 +85,7 @@ export const initServer = () => {
     conectarDB();
     routes(app);
     crearAdministrador();
+    crearCategoria();
     const port = process.env.PORT || 3002;
     app.listen(port, () => {
       console.log(`Server running on port ${port} `);

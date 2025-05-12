@@ -4,6 +4,7 @@ import {
   getPublicacionById,
   updatePublicacion,
   deletePublicacion,
+  getPublicacionesPublicas,
 } from "../publicacion/publicacion.controller.js";
 
 import {
@@ -146,5 +147,7 @@ router.delete(
   deletePublicacionValidator,
   deletePublicacion
 );
+
+router.get("/listPublicacionesPublicas", getPublicacionesPublicas);
 
 export default router;

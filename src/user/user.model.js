@@ -1,59 +1,74 @@
-import { Schema, model} from "mongoose";
+import { Schema, model } from "mongoose";
 
-const userSchema = Schema({
-    name:{
-        type: String,
-        required: [true, "Name is required"],
-        maxLength: [25, "Name cannot exceed 25 characters"]
+const userSchema = Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Name is required"],
+      maxLength: [25, "Name cannot exceed 25 characters"],
     },
-    username:{
-        type: String,
-        required: [true, "Surname is required"],
-        maxLength: [25, "Surname cannot exceed 25 characters"],
-        unique: true
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      unique: true, 
     },
-    email:{
-        type: String,
-        required: [true, "Email is required"],
-        unique: true
+    password: {
+      type: String,
+      required: [true, "Password is required"],
     },
-    password:{
-        type: String,
-        required: [true, "Password is required"]
+    profilePicture: {
+      type: String,
     },
-    profilePicture:{
-        type: String
+    profileDescription: {
+      type: String,
+      maxLength: [100, "Description cannot exceed 100 characters"],
     },
-    profileDescription:{
-        type: String,
-        maxLength: [100, "Description cannot exceed 100 characters"]
+    phone: {
+      type: String,
+      minLength: 8,
+      maxLength: 8,
+      required: true,
     },
-    phone:{
-        type: String,
-        minLength: 8,
-        maxLength: 8,
-        required: true
+    role: {
+      type: String,
+      required: true,
+      default: "USER",
+      enum: ["ADMIN", "USER"],
     },
-    role:{
-        type: String,
-        required: true,
-        default: "USER",
-        enum: ["ADMIN", "USER"]
+    status: {
+      type: Boolean,
+      default: true,
     },
-    status:{
-        type: Boolean,
-        default: true
-    }
-},
-{
+
+    estado: {
+      type: String,
+      required: true,
+      default: "PUBLICO",
+      enum: ["PUBLICO", "PRIVADO"],
+    },
+    cuentaName: {
+      type: String,
+      maxLength: [25, "Name cannot exceed 25 characters"],
+      unique: true,
+      required: [true, "Name is required"],
+    },
+    publicaciones: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Publicacion",
+      },
+    ],
+  },
+  {
     versionKey: false,
-    timeStamps: true
-})
+    timestamps: true,
+  }
+);
 
-userSchema.methods.toJSON = function(){
-    const {password, _id, ...usuario} = this.toObject()
-    usuario.uid = _id
-    return usuario
-}
+userSchema.methods.toJSON = function () {
+  const { password, _id, ...usuario } = this.toObject();
+  usuario.uid = _id;
+  return usuario;
+};
 
-export default model("USER", userSchema)
+export default model("USER", userSchema);

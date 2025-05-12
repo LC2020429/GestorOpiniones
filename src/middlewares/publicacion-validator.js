@@ -4,10 +4,12 @@ import { validarCampos } from "./validate-fields.js";
 import { handleErrors } from "./handle-errors.js";
 import { validateJWT } from "./validate-jwt.js";
 import { hasRoles } from "./validate-admin.js";
-import { isOwner } from "./validate-login.js";
-
+import { isCreatingOwnPublication as ownPublication } from "./creating-own.js";
+import { isOwner } from "./validate-owner.js  ";
 export const createPublicacionValidator = [
   validateJWT,
+//  isOwner,
+  ownPublication,
   hasRoles("USER"),
   body("title")
     .notEmpty()
@@ -38,7 +40,8 @@ export const getByIdPublicacionValidator = [
 
 export const updatePublicacionValidator = [
   validateJWT,
-  hasRoles("USER"),
+  isOwner,
+  ownPublication,
   param("pid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("pid").custom(publicacionExists),
   body("title")
@@ -60,7 +63,7 @@ export const updatePublicacionValidator = [
 export const deletePublicacionValidator = [
   validateJWT,
   hasRoles("USER"),
-  hasRoles("USER"),
+  hasRoles("ADMIN"),
   param("pid").isMongoId().withMessage("No es un ID válido de MongoDB"),
   param("pid").custom(publicacionExists),
   validarCampos,

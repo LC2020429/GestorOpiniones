@@ -25,15 +25,15 @@ const middlewares = (app) => {
 };
 const crearAdministrador = async () => {
   try {
-    const adminExist = await User.findOne({ username: "AdminOpinionGestor" });
+    const adminExist = await User.findOne({ email: "AdminOpinionGestor@gmail.com" });
 
     if (!adminExist) {
       const encryptedPassword = await hash("Key40RAdm!nSuper");
       const admin = new User({
         name: "Admin",
-        username: "AdminOpinionGestor",
         email: "AdminOpinionGestor@gmail.com",
         password: encryptedPassword,
+        cuentaName: "AdminOpinionGestor",
         phone: 11110000,
         role: "ADMIN",
       });

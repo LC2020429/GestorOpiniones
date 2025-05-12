@@ -1,5 +1,6 @@
 import Publicacion from "./publicacion.model.js";
 import Category from "../category/categorys.model.js";
+import User from "../user/user.model.js";
 
 export const createPublicacion = async (req, res) => {
   try {
@@ -60,13 +61,17 @@ export const updatePublicacion = async (req, res) => {
       });
     }
 
-    if (updatedPublicacion.userPubli.toString() !== req.usuario._id.toString()) {
+    if (
+      updatedPublicacion.userPubli.toString() !== req.usuario._id.toString()
+    ) {
       return res.status(401).json({
         success: false,
         message: "No tienes permiso para editar esta publicación",
       });
     }
-    const updatedData = await Publicacion.findByIdAndUpdate(pid, data, { new: true });
+    const updatedData = await Publicacion.findByIdAndUpdate(pid, data, {
+      new: true,
+    });
 
     return res.status(200).json({
       success: true,
@@ -81,7 +86,6 @@ export const updatePublicacion = async (req, res) => {
     });
   }
 };
-
 
 export const getPublicacionById = async (req, res) => {
   try {
@@ -155,6 +159,45 @@ export const deletePublicacion = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "Error al eliminar la publicación",
+      error: err.message,
+    });
+  }
+};
+
+export const getPublicacionesPublicas = async (req, res) => {
+  try {
+    const usuariosPublicos = await User.find({ estado: "PUBLICO" });
+
+    if (usuariosPublicos.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "No hay usuarios públicos",
+      });
+    }
+
+    const publicaciones = await Publicacion.find({
+      userPubli: { $in: usuariosPublicos.map((user) => user._id) },
+    })
+      .populate("userPubli", "name")
+      .populate("categories", "name")
+      .sort({ createdAt: -1 });
+
+    if (publicaciones.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "No se encontraron publicaciones públicas",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      total: publicaciones.length,
+      publicaciones,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: "Error al obtener las publicaciones públicas",
       error: err.message,
     });
   }

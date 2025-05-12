@@ -1,15 +1,13 @@
 import { body, param } from "express-validator";
-import { emailExists, usernameExists, userExists } from "../helpers/db-validators.js";
+import { emailExists,  userExists } from "../helpers/db-validators.js";
 import { validarCampos } from "./validate-fields.js";
 import { deleteFileOnError} from "./delete-fie-on-error.js";
 import { handleErrors } from "./handle-errors.js";
 
 export const registerValidator = [
     body("name").notEmpty().withMessage("El nombre es obligatorio"),
-    body("username").notEmpty().withMessage("El nombre de usuario es obligatorio"),
     body("email").isEmail().withMessage("El email no es válido"),
     body("email").custom(emailExists),
-    body("username").custom(usernameExists),
     body("password").isStrongPassword({
         minLength: 8,
         minLowercase: 1,
@@ -34,7 +32,6 @@ export const passwordValidator = [
 
 export const loginValidator = [
     body("email").optional().isEmail().withMessage("No es un email válido"),
-    body("username").optional().isString().withMessage("Username es en formáto erróneo"),
     body("password").isLength({ min: 4}).withMessage("El password debe contener al menos 8 caracteres"),
     validarCampos,
     handleErrors

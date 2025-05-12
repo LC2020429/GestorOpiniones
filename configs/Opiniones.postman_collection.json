@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "a6350837-ebea-401f-b2da-f9838110a292",
+		"_postman_id": "1bb8a216-796a-4547-b109-b1f99d75c12e",
 		"name": "Opiniones",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41770366"
+		"_exporter_id": "43850384",
+		"_collection_link": "https://diligente.postman.co/workspace/04a27ab5-ab56-46fc-8722-f1eb979f59f2/collection/43850384-1bb8a216-796a-4547-b109-b1f99d75c12e?action=share&source=collection_link&creator=43850384"
 	},
 	"item": [
 		{
@@ -23,13 +24,8 @@
 									"type": "text"
 								},
 								{
-									"key": "username",
-									"value": "ale2024",
-									"type": "text"
-								},
-								{
 									"key": "email",
-									"value": "ale2024@gmail.com",
+									"value": "Cristel@gmail.com",
 									"type": "text"
 								},
 								{
@@ -40,7 +36,7 @@
 								{
 									"key": "profilePicture",
 									"type": "file",
-									"src": "/C:/Users/Compu/Downloads/Captura (1).PNG"
+									"src": "/C:/Users/Rafa/Downloads/WhatsApp Image 2025-04-28 at 5.10.51 PM.jpeg"
 								},
 								{
 									"key": "profileDescription",
@@ -50,6 +46,11 @@
 								{
 									"key": "phone",
 									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "cuentaName",
+									"value": "ale123",
 									"type": "text"
 								}
 							]
@@ -89,8 +90,9 @@
 								},
 								{
 									"key": "username",
-									"value": "JH2025",
-									"type": "text"
+									"value": "JH2025asdfasdf",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "email",
@@ -115,6 +117,11 @@
 								{
 									"key": "phone",
 									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "cuentaName",
+									"value": "Lod tec",
 									"type": "text"
 								}
 							]
@@ -146,7 +153,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"ale2024@gmail.com\",\r\n    \"password\": \"123Abcd!\"\r\n}",
+							"raw": "{\r\n    \"email\": \"Cristel@gmail.com\",\r\n    \"password\": \"123Abcd!\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,41 +241,6 @@
 					"response": []
 				},
 				{
-					"name": "UpdatePass",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"newPasswordVerify\": \"123Abcd!\",\r\n    \"newPassword\": \"Qw3rt01!\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/user/updatePassword/67b787bca5efc2b7aa07baef",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3002",
-							"path": [
-								"gestorOpinions",
-								"v1",
-								"user",
-								"updatePassword",
-								"67b787bca5efc2b7aa07baef"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Login Copy",
 					"request": {
 						"method": "POST",
@@ -315,7 +287,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZDNmMzJhYTBlNzQ3NDI2MDlkOTMiLCJpYXQiOjE3NDAxNjc3NjcsImV4cCI6MTc0MDE3MTM2N30.2rsbZV0xAPEgSpAtGGaySkrXSiBH0EIBX3KGNbXTlYU",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODIxNjkzZmVkYjkyMzNkNDM1OGJiYzciLCJpYXQiOjE3NDcwMjAyMTgsImV4cCI6MTc0NzAyMzgxOH0.oYTbNjI98wL0iEhk76ZTlBQF3B4hhQgCgrPG1G2rDVE",
 									"type": "string"
 								}
 							]
@@ -324,7 +296,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Hola  ale\",\r\n    \"textPubli\": \"Texto criste la prueba\",\r\n    \"userPubli\": \"67b8d3f32aa0e74742609d93\",\r\n    \"categories\": [\r\n        \r\n    ]\r\n}\r\n",
+							"raw": "{\r\n    \"title\": \"BienveNIDOS A TALLER\",\r\n    \"textPubli\": \"Este año 2025 comenzamos con todo\",\r\n    \"userPubli\": \"6821693fedb9233d4358bbc7\",\r\n    \"categories\": [\r\n        \"6821695eedb9233d4358bbcb\"\r\n    ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -359,7 +331,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZDNmMzJhYTBlNzQ3NDI2MDlkOTMiLCJpYXQiOjE3NDAxNjYyMDQsImV4cCI6MTc0MDE2OTgwNH0.WqOzIdIELLHD4GxWTwhZI3ECgIwLYA7QUQQpIjmx9_4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODIxNjkzZmVkYjkyMzNkNDM1OGJiYzciLCJpYXQiOjE3NDcwMjAyMTgsImV4cCI6MTc0NzAyMzgxOH0.oYTbNjI98wL0iEhk76ZTlBQF3B4hhQgCgrPG1G2rDVE",
 									"type": "string"
 								}
 							]
@@ -368,7 +340,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Hola Admins Ale\",\r\n    \"textPubli\": \"Texto de la prueba\",\r\n    \"userPubli\": \"67b8d3f32aa0e74742609d93\",\r\n    \"categories\": [\r\n\r\n    ]\r\n}\r\n",
+							"raw": "{\r\n    \"title\": \"BienveNIDOS A Tecnologia\",\r\n    \"textPubli\": \"Este año 2025 comenzamos con todo\",\r\n    \"userPubli\": \"6821693fedb9233d4358bbc7\",\r\n    \"categories\": [\r\n        \"68216961edb9233d4358bbce\"\r\n    ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -432,31 +404,22 @@
 					"response": []
 				},
 				{
-					"name": "editTitle",
+					"name": "findPost Copy",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZDNmMzJhYTBlNzQ3NDI2MDlkOTMiLCJpYXQiOjE3NDAxNjcyMTcsImV4cCI6MTc0MDE3MDgxN30.VFlD3uCbyOXLMA2ogUitfOV6iALCdQ2G8362jx92aYk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YzhhZjU2YmZmMWQ4ZTJkNjJkODEiLCJpYXQiOjE3NDAxNjUwMjIsImV4cCI6MTc0MDE2ODYyMn0.6UPo_lAvimI2drgtpQg2ixqz7-gdazj17H0_Ubpn578",
 									"type": "string"
 								}
 							]
 						},
-						"method": "PATCH",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"asdfasdf\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/publicacion/updatePublicacion/67b8d8edfd1797adc85de880",
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/publicacion/listPublicacionesPublicas",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -469,98 +432,7 @@
 								"gestorOpinions",
 								"v1",
 								"publicacion",
-								"updatePublicacion",
-								"67b8d8edfd1797adc85de880"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "editText",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YTliOGY2MGQ0ZTc3MzczMzJiMTMiLCJpYXQiOjE3NDAxNTc3MzYsImV4cCI6MTc0MDE2MTMzNn0.7BL-Obz2aSBLwEk2A6KT-XvFTgdPzEtx5JPajX6tKb4",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"textPubli\": \"Editando prueba\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/publicacion/updatePublicacion/67b8ac74e621990a32908298",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3002",
-							"path": [
-								"gestorOpinions",
-								"v1",
-								"publicacion",
-								"updatePublicacion",
-								"67b8ac74e621990a32908298"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deletePost",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZDAxZmUyNjdhZDZlYzhlYTQ1N2MiLCJpYXQiOjE3NDAxNjU0NDMsImV4cCI6MTc0MDE2OTA0M30.3mYvgbqe_e_s7rOWi4T5aOEAl6atEOL50K8Dbik-r5U",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/publicacion/deletePublicacion/67b8d0fbe267ad6ec8ea4594",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "3002",
-							"path": [
-								"gestorOpinions",
-								"v1",
-								"publicacion",
-								"deletePublicacion",
-								"67b8d0fbe267ad6ec8ea4594"
+								"listPublicacionesPublicas"
 							]
 						}
 					},
@@ -579,7 +451,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZDNmMzJhYTBlNzQ3NDI2MDlkOTMiLCJpYXQiOjE3NDAxNzE3MjgsImV4cCI6MTc0MDE3NTMyOH0.EHDlKME5MelEZT7Ix8zD5yIzkPXK65xP5au2DvcDM5I",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFmZjU0MGNhMmU4YWNkMjA1M2FiMzAiLCJpYXQiOjE3NDcwMTI4NDUsImV4cCI6MTc0NzAxNjQ0NX0.dESu8EkRG0xH5zZcyfy-7qoS6XlGQzEroHoSzdQkiHE",
 									"type": "string"
 								}
 							]
@@ -588,7 +460,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"textComent\": \"Hola esto es el comentario\",\r\n    \"userWhoComent\": \"67b8d3f32aa0e74742609d93\",\r\n    \"publicacionComent\": \"67b8d8edfd1797adc85de880\"\r\n}\r\n",
+							"raw": "{\r\n    \"textComent\": \"Hola esto es el comentario\",\r\n    \"userWhoComent\": \"682000701db86328d7b15865\",\r\n    \"publicacionComent\": \"682137992266684584ab2900\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -680,7 +552,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"textComent\": \"Hola esto es el comenta222rio\"\r\n}\r\n",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -757,7 +629,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4ZDAwYmUyNjdhZDZlYzhlYTQ1NzQiLCJpYXQiOjE3NDAxNjUxNjIsImV4cCI6MTc0MDE2ODc2Mn0.V2_hx8Nhc9e9K60r1JJcSM2A7icinuxO7wjVf1tUHqw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODIxNjkyYmVkYjkyMzNkNDM1OGJiYzMiLCJpYXQiOjE3NDcwMjAwOTksImV4cCI6MTc0NzAyMzY5OX0.MhytjE5WYyo7sst5KRTs8BeHvRE1N4W1c2iLVj6LnQg",
 									"type": "string"
 								}
 							]
@@ -773,7 +645,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"categoryName\": \"Comedia\"\r\n}\r\n",
+							"raw": "{\r\n  \"categoryName\": \"Taller\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -808,7 +680,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YTlhYmY2MGQ0ZTc3MzczMzJiMGYiLCJpYXQiOjE3NDAxNTUzNTIsImV4cCI6MTc0MDE1ODk1Mn0.3zhEew7UXXqazZEWShjNkOa28egk9j2740FVYBEX8Yc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODIxNjkyYmVkYjkyMzNkNDM1OGJiYzMiLCJpYXQiOjE3NDcwMjAwOTksImV4cCI6MTc0NzAyMzY5OX0.MhytjE5WYyo7sst5KRTs8BeHvRE1N4W1c2iLVj6LnQg",
 									"type": "string"
 								}
 							]
@@ -824,7 +696,58 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"categoryName\": \"Estudio\"\r\n}\r\n",
+							"raw": "{\r\n  \"categoryName\": \"Tecnologia\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/addCategory",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3002",
+							"path": [
+								"gestorOpinions",
+								"v1",
+								"categoria",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCategory3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODIxNjkyYmVkYjkyMzNkNDM1OGJiYzMiLCJpYXQiOjE3NDcwMjAwOTksImV4cCI6MTc0NzAyMzY5OX0.MhytjE5WYyo7sst5KRTs8BeHvRE1N4W1c2iLVj6LnQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3OGNmNzY4MzBhNDhkZGQ4NDI0ZTciLCJpYXQiOjE3NDAwODI0NTMsImV4cCI6MTc0MDA4NjA1M30.DYdfpZ5vm0JZ8PHYRx-OYhpbD8a7ADPN9ycnKZ9kJdw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"categoryName\": \"TICS\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -853,6 +776,9 @@
 				},
 				{
 					"name": "listCategorys",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -863,6 +789,10 @@
 								"disabled": true
 							}
 						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
 						"url": {
 							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/",
 							"protocol": "http",
@@ -986,7 +916,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YTlhYmY2MGQ0ZTc3MzczMzJiMGYiLCJpYXQiOjE3NDAxNTgwMzYsImV4cCI6MTc0MDE2MTYzNn0.msN3TXLGpv2yCrSAbt4OKdrpezwJthiKyCYoJ6-OVVc",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODFmZjUxY2NhMmU4YWNkMjA1M2FiMmEiLCJpYXQiOjE3NDY5NTc1OTQsImV4cCI6MTc0Njk2MTE5NH0.tuqPo2Ds5wUE4REdcglomwVAyirqVtK0hagaEbQoW0E",
 									"type": "string"
 								}
 							]
@@ -1010,7 +940,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/deleteCategory/67b8aa1be621990a32908272",
+							"raw": "http://127.0.0.1:3002/gestorOpinions/v1/categoria/deleteCategory/681ff51cca2e8acd2053ab26",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -1024,13 +954,17 @@
 								"v1",
 								"categoria",
 								"deleteCategory",
-								"67b8aa1be621990a32908272"
+								"681ff51cca2e8acd2053ab26"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
 		}
 	]
 }

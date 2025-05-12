@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "68216ae4edb9233d4358bbdf"
+  },
+  "title": "BienveNIDOS A TALLER",
+  "textPubli": "Este año 2025 comenzamos con todo",
+  "userPubli": {
+    "$oid": "6821693fedb9233d4358bbc7"
+  },
+  "categories": [
+    {
+      "$oid": "6821695eedb9233d4358bbcb"
+    }
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T03:28:36.713Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T03:28:36.713Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68216b29edb9233d4358bbe4"
+  },
+  "title": "BienveNIDOS A Tecnologia",
+  "textPubli": "Este año 2025 comenzamos con todo",
+  "userPubli": {
+    "$oid": "6821693fedb9233d4358bbc7"
+  },
+  "categories": [
+    {
+      "$oid": "68216961edb9233d4358bbce"
+    }
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T03:29:45.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T03:29:45.283Z"
+  }
+}]

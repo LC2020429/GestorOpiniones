@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "6821692bedb9233d4358bbc0"
+  },
+  "categoryName": "Default",
+  "vistasCategory": 0,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "6821695eedb9233d4358bbcb"
+  },
+  "categoryName": "Taller",
+  "vistasCategory": 0,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "68216961edb9233d4358bbce"
+  },
+  "categoryName": "Tecnologia",
+  "vistasCategory": 0,
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "68216964edb9233d4358bbd1"
+  },
+  "categoryName": "TICS",
+  "vistasCategory": 0,
+  "status": true
+}]

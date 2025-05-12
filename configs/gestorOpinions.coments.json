@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "68216bedfb7f2f26b147be1f"
+  },
+  "textComent": "Hola",
+  "userWhoComent": {
+    "$oid": "6821693fedb9233d4358bbc7"
+  },
+  "publicacionComent": [
+    {
+      "$oid": "68216b29edb9233d4358bbe4"
+    }
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T03:33:01.198Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T03:33:01.198Z"
+  }
+}]

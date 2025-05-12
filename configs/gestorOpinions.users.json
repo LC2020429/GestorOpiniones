@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "6821692bedb9233d4358bbc3"
+  },
+  "name": "Admin",
+  "email": "AdminOpinionGestor@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$E7BcjUGBnnYn1YG8H8E/0A$YicJcKVULPa/x3A8nVgihSov4Tot9KsVgfL01LKlHEA",
+  "phone": "11110000",
+  "role": "ADMIN",
+  "status": true,
+  "estado": "PUBLICO",
+  "cuentaName": "AdminOpinionGestor",
+  "publicaciones": [],
+  "createdAt": {
+    "$date": "2025-05-12T03:21:15.678Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T03:21:15.678Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6821693fedb9233d4358bbc7"
+  },
+  "name": "Cristel",
+  "email": "Cristel@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$wM/ZQXQcuKtNOhW8W1IFQQ$a0X22lzynVFoDyfcaeGiR8/eUJSI5xtPmYef4qy1Db8",
+  "profilePicture": null,
+  "profileDescription": "cuenta personal",
+  "phone": "12345678",
+  "role": "USER",
+  "status": true,
+  "estado": "PUBLICO",
+  "cuentaName": "ale123",
+  "publicaciones": [],
+  "createdAt": {
+    "$date": "2025-05-12T03:21:35.382Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T03:21:35.382Z"
+  }
+}]
